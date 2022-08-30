@@ -1,0 +1,30 @@
+// 引入scss定义的color变量
+@import "./color.scss";
+
+// hover的背景色，根据主题切换来自动的适配
+@mixin hover_bg_color {
+  background: $hover-default-color;
+
+  // 属性名+属性值选择器
+  [class="light"] & {
+    background: $hover-default-color;
+  }
+
+  [class="dark"] & {
+    background: $hover-dark-color;
+  }
+}
+
+// 文字的颜色，根据主题切换来自动的适配
+@mixin text_color {
+  color: $light-bg-color;
+
+  // 属性名+属性值选择器
+  [class="light"] & {
+    color: $dark-bg-color;
+  }
+
+  [class="dark"] & {
+    color: $light-bg-color;
+  }
+}
